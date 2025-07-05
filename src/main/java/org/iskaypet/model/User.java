@@ -1,0 +1,1 @@
+package org.iskaypet.model;public class User {}
