@@ -1,5 +1,8 @@
 package org.iskaypet.controllers;
 
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Mockito.when;
+
 import io.javalin.http.Context;
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.observers.TestObserver;
@@ -10,9 +13,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 class UsersControllerTest {
@@ -158,4 +158,4 @@ class UsersControllerTest {
         TestObserver<UserDTO> testObserver = result.test();
         testObserver.assertError(RuntimeException.class);
     }
-} 
+}

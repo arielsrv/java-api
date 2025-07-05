@@ -1,5 +1,7 @@
 package org.iskaypet.clients;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.observers.TestObserver;
 import org.iskaypet.clients.responses.UserResponse;
@@ -7,8 +9,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
-
-import static org.assertj.core.api.Assertions.assertThat;
 
 @ExtendWith(MockitoExtension.class)
 class UsersClientImplTest {
@@ -113,4 +113,4 @@ class UsersClientImplTest {
         assertThat(user1.getUsername()).isEqualTo(username1);
         assertThat(user2.getUsername()).isEqualTo(username2);
     }
-} 
+}

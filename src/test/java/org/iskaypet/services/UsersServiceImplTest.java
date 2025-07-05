@@ -1,5 +1,8 @@
 package org.iskaypet.services;
 
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Mockito.when;
+
 import io.reactivex.rxjava3.core.Observable;
 import io.reactivex.rxjava3.observers.TestObserver;
 import org.iskaypet.clients.UsersClient;
@@ -10,9 +13,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 class UsersServiceImplTest {
@@ -114,7 +114,8 @@ class UsersServiceImplTest {
         // Given
         Long userId = 1L;
         UserResponse userResponse = new UserResponse(
-            userId, "Jane Smith", "jane@example.com", "janesmith", "+9876543210", "https://janesmith.com"
+            userId, "Jane Smith", "jane@example.com", "janesmith", "+9876543210",
+            "https://janesmith.com"
         );
         when(usersClient.getUserById(userId)).thenReturn(Observable.just(userResponse));
 
@@ -124,7 +125,7 @@ class UsersServiceImplTest {
         // Then
         TestObserver<UserDTO> testObserver = result.test();
         UserDTO userDTO = testObserver.values().get(0);
-        
+
         // Verify mapping
         assertThat(userDTO.getId()).isEqualTo(userResponse.getId());
         assertThat(userDTO.getName()).isEqualTo(userResponse.getName());
@@ -147,11 +148,11 @@ class UsersServiceImplTest {
         // Then
         TestObserver<UserDTO> testObserver = result.test();
         UserDTO userDTO = testObserver.values().get(0);
-        
+
         // Verify mapping
         assertThat(userDTO.getId()).isEqualTo(userResponse.getId());
         assertThat(userDTO.getName()).isEqualTo(userResponse.getName());
         assertThat(userDTO.getEmail()).isEqualTo(userResponse.getEmail());
         assertThat(userDTO.getUsername()).isEqualTo(userResponse.getUsername());
     }
-} 
+}

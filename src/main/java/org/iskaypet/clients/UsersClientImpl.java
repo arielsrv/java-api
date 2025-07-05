@@ -4,7 +4,7 @@ import io.reactivex.rxjava3.core.Observable;
 import org.iskaypet.clients.responses.UserResponse;
 
 public class UsersClientImpl implements UsersClient {
-    
+
     @Override
     public Observable<UserResponse> getUserById(Long id) {
         return Observable.fromCallable(() -> {
@@ -20,7 +20,7 @@ public class UsersClientImpl implements UsersClient {
             );
         });
     }
-    
+
     @Override
     public Observable<UserResponse> getUserByUsername(String username) {
         return Observable.fromCallable(() -> {
@@ -36,4 +36,4 @@ public class UsersClientImpl implements UsersClient {
             );
         });
     }
-} 
+}

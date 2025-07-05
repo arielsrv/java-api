@@ -1,6 +1,7 @@
 # Java API con Javalin, Guice y RxJava
 
 Este proyecto implementa una API REST usando:
+
 - **Javalin**: Framework web ligero
 - **Google Guice**: Inyección de dependencias
 - **RxJava**: Programación reactiva y asíncrona
@@ -14,6 +15,7 @@ Controller (Javalin) → Service (RxJava) → Client (RxJava) → External API
 ```
 
 ### Flujo de datos:
+
 1. **UsersController**: Maneja requests HTTP y usa RxJava para operaciones asíncronas
 2. **UsersService**: Lógica de negocio con transformación de datos usando RxJava
 3. **UsersClient**: Simula llamadas a API externa con RxJava
@@ -28,11 +30,13 @@ Controller (Javalin) → Service (RxJava) → Client (RxJava) → External API
 ## Ejecutar la aplicación
 
 ### Opción 1: Con Maven (si está instalado)
+
 ```bash
 mvn compile exec:java -Dexec.mainClass="org.iskaypet.Application"
 ```
 
 ### Opción 2: Con Java directamente
+
 ```bash
 # Compilar
 javac -cp "target/classes:$(find ~/.m2/repository -name "*.jar" | tr '\n' ':')" src/main/java/org/iskaypet/*.java src/main/java/org/iskaypet/*/*.java
@@ -42,11 +46,13 @@ java -cp "target/classes:$(find ~/.m2/repository -name "*.jar" | tr '\n' ':')" o
 ```
 
 ### Opción 3: Con IDE
+
 Ejecutar directamente la clase `Application.java`
 
 ## Testing
 
 ### Ejecutar todos los tests
+
 ```bash
 mvn test
 ```
@@ -54,6 +60,7 @@ mvn test
 ### Tests incluidos:
 
 #### **Unit Tests:**
+
 - `UsersClientImplTest`: Tests del cliente que simula llamadas a API externa
 - `UsersServiceImplTest`: Tests del servicio con mocks del cliente
 - `UsersControllerTest`: Tests del controller con mocks del servicio
@@ -61,9 +68,11 @@ mvn test
 - `RxJavalinTest`: Tests del wrapper de Javalin
 
 #### **Integration Tests:**
+
 - `UserFlowIntegrationTest`: Tests de flujo completo con Guice
 
 ### Cobertura de tests:
+
 - ✅ **Controllers**: Tests con mocks de servicios
 - ✅ **Services**: Tests con mocks de clients
 - ✅ **Clients**: Tests de implementación real

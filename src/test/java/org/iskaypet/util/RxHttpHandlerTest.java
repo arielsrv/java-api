@@ -1,18 +1,18 @@
 package org.iskaypet.util;
 
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.verifyNoMoreInteractions;
+
 import io.javalin.http.Context;
 import io.reactivex.rxjava3.core.Observable;
+import java.util.Map;
+import java.util.function.Function;
 import org.iskaypet.dto.UserDTO;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-
-import java.util.function.Function;
-import java.util.Map;
-
-import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 class RxHttpHandlerTest {
@@ -115,4 +115,4 @@ class RxHttpHandlerTest {
         verify(ctx).json(Map.of("error", "Complex error message"));
         verifyNoMoreInteractions(ctx);
     }
-} 
+}

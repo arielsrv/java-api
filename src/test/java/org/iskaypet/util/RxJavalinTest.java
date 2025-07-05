@@ -1,19 +1,21 @@
 package org.iskaypet.util;
 
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Mockito.any;
+import static org.mockito.Mockito.eq;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+
 import io.javalin.Javalin;
 import io.javalin.http.Context;
 import io.reactivex.rxjava3.core.Observable;
+import java.util.function.Function;
 import org.iskaypet.dto.UserDTO;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-
-import java.util.function.Function;
-
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
 class RxJavalinTest {
@@ -42,7 +44,8 @@ class RxJavalinTest {
     void get_ShouldCallJavalinGetWithRxHttpHandler() {
         // Given
         String path = "/users/{id}";
-        Function<Context, Observable<UserDTO>> handler = context -> Observable.just(new UserDTO(1L, "John", "john@example.com", "john"));
+        Function<Context, Observable<UserDTO>> handler = context -> Observable.just(
+            new UserDTO(1L, "John", "john@example.com", "john"));
 
         // When
         RxJavalin result = rxJavalin.get(path, handler);
@@ -56,7 +59,8 @@ class RxJavalinTest {
     void post_ShouldCallJavalinPostWithRxHttpHandler() {
         // Given
         String path = "/users";
-        Function<Context, Observable<UserDTO>> handler = context -> Observable.just(new UserDTO(1L, "John", "john@example.com", "john"));
+        Function<Context, Observable<UserDTO>> handler = context -> Observable.just(
+            new UserDTO(1L, "John", "john@example.com", "john"));
 
         // When
         RxJavalin result = rxJavalin.post(path, handler);
@@ -70,7 +74,8 @@ class RxJavalinTest {
     void put_ShouldCallJavalinPutWithRxHttpHandler() {
         // Given
         String path = "/users/{id}";
-        Function<Context, Observable<UserDTO>> handler = context -> Observable.just(new UserDTO(1L, "John", "john@example.com", "john"));
+        Function<Context, Observable<UserDTO>> handler = context -> Observable.just(
+            new UserDTO(1L, "John", "john@example.com", "john"));
 
         // When
         RxJavalin result = rxJavalin.put(path, handler);
@@ -84,7 +89,8 @@ class RxJavalinTest {
     void delete_ShouldCallJavalinDeleteWithRxHttpHandler() {
         // Given
         String path = "/users/{id}";
-        Function<Context, Observable<UserDTO>> handler = context -> Observable.just(new UserDTO(1L, "John", "john@example.com", "john"));
+        Function<Context, Observable<UserDTO>> handler = context -> Observable.just(
+            new UserDTO(1L, "John", "john@example.com", "john"));
 
         // When
         RxJavalin result = rxJavalin.delete(path, handler);
@@ -98,7 +104,8 @@ class RxJavalinTest {
     void patch_ShouldCallJavalinPatchWithRxHttpHandler() {
         // Given
         String path = "/users/{id}";
-        Function<Context, Observable<UserDTO>> handler = context -> Observable.just(new UserDTO(1L, "John", "john@example.com", "john"));
+        Function<Context, Observable<UserDTO>> handler = context -> Observable.just(
+            new UserDTO(1L, "John", "john@example.com", "john"));
 
         // When
         RxJavalin result = rxJavalin.patch(path, handler);
@@ -171,4 +178,4 @@ class RxJavalinTest {
         // Then
         assertThat(result).isEqualTo(javalin);
     }
-} 
+}

@@ -1,6 +1,7 @@
 package org.iskaypet.clients.responses;
 
 public class UserResponse {
+
     private Long id;
     private String name;
     private String email;
@@ -9,9 +10,11 @@ public class UserResponse {
     private String website;
 
     // Constructors
-    public UserResponse() {}
+    public UserResponse() {
+    }
 
-    public UserResponse(Long id, String name, String email, String username, String phone, String website) {
+    public UserResponse(Long id, String name, String email, String username, String phone,
+        String website) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -72,12 +75,12 @@ public class UserResponse {
     @Override
     public String toString() {
         return "UserResponse{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", username='" + username + '\'' +
-                ", phone='" + phone + '\'' +
-                ", website='" + website + '\'' +
-                '}';
+            "id=" + id +
+            ", name='" + name + '\'' +
+            ", email='" + email + '\'' +
+            ", username='" + username + '\'' +
+            ", phone='" + phone + '\'' +
+            ", website='" + website + '\'' +
+            '}';
     }
 }

@@ -6,6 +6,7 @@ import io.reactivex.rxjava3.core.Observable;
 import java.util.function.Function;
 
 public class RxJavalin {
+
     private final Javalin javalin;
 
     public RxJavalin(Javalin javalin) {
@@ -16,7 +17,8 @@ public class RxJavalin {
         return new RxJavalin(Javalin.create());
     }
 
-    public static RxJavalin create(java.util.function.Consumer<io.javalin.config.JavalinConfig> config) {
+    public static RxJavalin create(
+        java.util.function.Consumer<io.javalin.config.JavalinConfig> config) {
         return new RxJavalin(Javalin.create(config));
     }
 
@@ -65,4 +67,4 @@ public class RxJavalin {
     public Javalin getJavalin() {
         return javalin;
     }
-} 
+}

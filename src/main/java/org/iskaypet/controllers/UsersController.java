@@ -7,6 +7,7 @@ import org.iskaypet.dto.UserDTO;
 import org.iskaypet.services.UsersService;
 
 public class UsersController {
+
     private final UsersService usersService;
 
     @Inject

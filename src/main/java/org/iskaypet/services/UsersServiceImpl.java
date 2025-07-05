@@ -3,8 +3,8 @@ package org.iskaypet.services;
 import com.google.inject.Inject;
 import io.reactivex.rxjava3.core.Observable;
 import org.iskaypet.clients.UsersClient;
-import org.iskaypet.dto.UserDTO;
 import org.iskaypet.clients.responses.UserResponse;
+import org.iskaypet.dto.UserDTO;
 
 public class UsersServiceImpl implements UsersService {
 

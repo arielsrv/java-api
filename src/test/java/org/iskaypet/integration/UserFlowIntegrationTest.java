@@ -1,5 +1,7 @@
 package org.iskaypet.integration;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import io.reactivex.rxjava3.core.Observable;
@@ -12,8 +14,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
-
-import static org.assertj.core.api.Assertions.assertThat;
 
 @ExtendWith(MockitoExtension.class)
 class UserFlowIntegrationTest {
@@ -132,4 +132,4 @@ class UserFlowIntegrationTest {
         assertThat(user1.getId()).isEqualTo(userId1);
         assertThat(user2.getId()).isEqualTo(userId2);
     }
-} 
+}

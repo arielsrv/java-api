@@ -1,13 +1,15 @@
 package org.iskaypet.dto;
 
 public class UserDTO {
+
     private Long id;
     private String name;
     private String email;
     private String username;
 
     // Constructors
-    public UserDTO() {}
+    public UserDTO() {
+    }
 
     public UserDTO(Long id, String name, String email, String username) {
         this.id = id;
@@ -52,10 +54,10 @@ public class UserDTO {
     @Override
     public String toString() {
         return "UserDTO{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", username='" + username + '\'' +
-                '}';
+            "id=" + id +
+            ", name='" + name + '\'' +
+            ", email='" + email + '\'' +
+            ", username='" + username + '\'' +
+            '}';
     }
 }
