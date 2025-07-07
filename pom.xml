@@ -29,7 +29,7 @@
     <dependency>
       <artifactId>rxjava</artifactId>
       <groupId>io.reactivex.rxjava3</groupId>
-      <version>3.1.10</version>
+      <version>3.1.11</version>
     </dependency>
 
     <!-- Testing Dependencies -->
