@@ -9,7 +9,7 @@
     <dependency>
       <artifactId>javalin</artifactId>
       <groupId>io.javalin</groupId>
-      <version>6.7.0</version>
+      <version>7.0.0</version>
     </dependency>
     <dependency>
       <artifactId>slf4j-simple</artifactId>
